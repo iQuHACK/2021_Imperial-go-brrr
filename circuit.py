@@ -12,9 +12,11 @@ import matplotlib.pyplot as plt
 import os
 from dotenv import load_dotenv
 load_dotenv()
-API_KEY = os.getenv('PROJECT_API_KEY')
+
 #%%
 reload(gt)
+
+API_KEY = "H6dyxfjlijmx2vpEmcoRHcHxm32PBNzJ"
 
 class Circuit:
     def __init__(self, n_qubits=3, API_KEY=API_KEY):
@@ -36,7 +38,7 @@ class Circuit:
         return self._circuit
 
     def draw(self):
-        return self.get_circuit().draw(output="mpl")
+        return self.get_circuit().draw()
 
     def get_gates(self):
         return self._gates
